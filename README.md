@@ -6,11 +6,11 @@ This repo has examples of how simple agentic tools can be written and used.
 
 ### Agents
 
-- has agents as example. More info [here](agents\README.md)
+- has agents as example. More info [here](agents/README.md)
 
 ### MCP servers
 
-- has MCP servers as example. More info [here](mcp-servers\README.md)
+- has MCP servers as example. More info [here](mcp-servers/README.md)
 
 ## Setup
 
