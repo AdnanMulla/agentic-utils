@@ -12,8 +12,11 @@ This project implements a Python-based agent that can classify and execute mathe
 
 ## Usage
 
+### Smart Math Agent
 ![Smart Math Agent](smart-math-agent.png)
 
+### Running the agent as server
+![Agent as server](server.png)
 
 # Example Queries for Multi-Step Math Agent
 
