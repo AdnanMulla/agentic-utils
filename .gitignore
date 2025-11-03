@@ -11,3 +11,4 @@ wheels/
 
 # Env file
 **/.env
+agents/smart-math-agent/.langgraph_api/*

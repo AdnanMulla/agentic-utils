@@ -164,7 +164,7 @@ graph_builder.add_edge(RESPOND_NODE, END)
 
 # ----- Compilte graph -----
 
-graph = graph_builder.compile()
+graph = graph_builder.compile(name="smart_math_agent")
 
 # ----- Invoke graph -----
 
