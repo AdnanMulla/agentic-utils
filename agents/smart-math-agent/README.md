@@ -1,28 +1,50 @@
-# Smart Math Agent (Multi-Step)
+# 🧠 Smart Math Agent (Multi-Step)
 
 This project implements a Python-based agent that can classify and execute mathematical tasks using an LLM and MCP servers. It supports operations like GCD, LCM, addition, subtraction, and more by routing user queries to the appropriate computation server.
 
 
-## Agent Workflow
+## 🤖 Agent Workflow
 
 - User Input: Read the query from the user.
-- Classification Node: Use LLM to classify the query into server, tool, and arguments.
-- Tool Node: Convert arguments to dictionary and call the JSON-RPC tool.
+- Planner Node: Use LLM to prepare a plan to execute the user query.
+- Executor Node: Execute the steps listed in the plan. Call the tool from the appropriate MCP server as per the plan.
 - Return Result: Display the tool’s result to the user.
 
-## Usage
+## 🚀 Usage
 
-### Smart Math Agent
-![Smart Math Agent](smart-math-agent.png)
+Make sure the MCP servers are running before starting the agent.
 
-### Running the agent as server
+Requires following env vars:
+- GOOGLE_API_KEY
+- BASIC_MATH_SERVER_URL
+- NUMERICS_MATH_SERVER_URL
+- BASIC_MATH_SERVER_SESSION_ID (run `client.py` in mcp-server to get this value)
+- NUMERICS_MATH_SERVER_SESSION_ID (run `client.py` in mcp-server to get this value)
+
+Set the env var in `.env` file (follow `.env.template` file)
+
+```
+uv add python-dotenv langgraph "langchain[google-genai]" ipykernel
+uv run python main.py
+```
+
+
+### 🏗️ Architecture
+
+![Smart Math Agent](assets/smart-math-agent-architecture.png)
+
+### ✨ Smart Math Agent
+
+![Smart Math Agent](assets/smart-math-agent.png)
+
+### ✨Running the agent as server
 ```
 uv run uvicorn server:app --reload --port 7000
 ```
 
-![Agent as server](server.png)
+![Agent as server](assets/server.png)
 
-# Example Queries for Multi-Step Math Agent
+## Example Queries for Multi-Step Math Agent
 
 These queries can be used to test the multi-step agent that calls MCP tools (`add`, `subtract`, `gcd`, `lcm`) and supports dependent results (`<previous_result>`).
 

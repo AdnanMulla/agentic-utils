@@ -1,17 +1,32 @@
-# Math Agent
+# ➕➖✖️➗ Simple Math Agent
 
-This project implements a Python-based agent that can classify and execute mathematical tasks using an LLM and MCP servers. It supports operations like GCD, LCM, addition, subtraction, and more by routing user queries to the appropriate computation server.
+## 🚀 Usage
 
+Make sure the MCP servers are running before starting the agent.
 
-## Agent Workflow
+Requires following env vars:
+- GOOGLE_API_KEY
+- BASIC_MATH_SERVER_URL
+- NUMERICS_MATH_SERVER_URL
+- BASIC_MATH_SERVER_SESSION_ID (run `client.py` in mcp-server to get this value)
+- NUMERICS_MATH_SERVER_SESSION_ID (run `client.py` in mcp-server to get this value)
 
-- User Input: Read the query from the user.
-- Classification Node: Use LLM to classify the query into server, tool, and arguments.
-- Tool Node: Convert arguments to dictionary and call the JSON-RPC tool.
-- Return Result: Display the tool’s result to the user.
+Set the env var in `.env` file (follow `.env.template` file)
+```
+uv add python-dotenv langgraph "langchain[google-genai]" ipykernel
+uv run python main.py
+```
 
-## Usage
+## 🏗️ Architecture
 
-![basic_server](basic_server.png)
+![Simple Math Agent Architecture](assets/simple-math-agent-architecture.png)
 
-![numerics_server](numerics_server.png)
+## ✨Example
+
+### Agent using basic-math MCP server to compute result. 💡
+
+![Simple Math Agent Example](assets/basic-server.png)
+
+### Agent using numerics-math MCP server to compute result. 💡
+
+![Simple Math Agent Example](assets/numerics-server.png)
