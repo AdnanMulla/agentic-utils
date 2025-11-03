@@ -24,7 +24,7 @@ Requires following env vars:
 Set the env var in `.env` file (follow `.env.template` file)
 
 ```
-uv add python-dotenv langgraph "langchain[google-genai]" ipykernel
+uv sync
 uv run python main.py
 ```
 
@@ -37,7 +37,20 @@ uv run python main.py
 
 ![Smart Math Agent](assets/smart-math-agent.png)
 
-### ✨Running the agent as server
+### ✨Chat Interface (we can use agent-chat-ui by langsmith to use deployed UI and run our langgraph as server)
+
+```
+uv sync
+uv run langgraph dev
+```
+
+![Local server](assets/local-server.png)
+
+https://agentchat.vercel.app/?apiUrl=http://127.0.0.1:2024&assistantId=smart_math_agent
+
+![Chat Interface](assets/chat-interface.png)
+
+### ✨Running the agent as server (only for local development, not to be used with chat-ui)
 ```
 uv run uvicorn server:app --reload --port 7000
 ```

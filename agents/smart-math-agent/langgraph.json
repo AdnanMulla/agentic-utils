@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "./mcp_utils.py"
+    ],
+    "graphs": {
+        "smart_math_agent": "./main.py:graph"
+    },
+    "env": "./.env"
+}
