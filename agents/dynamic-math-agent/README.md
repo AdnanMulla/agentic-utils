@@ -18,6 +18,10 @@ uv sync
 uv run python main.py
 ```
 
+## Architecture
+
+![Dynamic Math Agent Architecuture](assets/dynamic-math-agent-architecture.png)
+
 ## Example
 ```
 (agentic-utils) C:\Users\Adnan\Desktop\Experiments\agentic-utils\agents\dynamic-math-agent>uv run python main.py
